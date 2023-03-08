@@ -5,8 +5,6 @@ $tgl_sekarang = Date('Y-m-d h:i:s');
 $tujuh_hari   = mktime(0,0,0,date("n"),date("j")+7,date("Y"));
 $batas_waktu  = date("Y-m-d h:i:s", $tujuh_hari);
 
-
-
 $invoice   = 'DRY'.Date('Ymdsi');
 $outlet_id = $_SESSION['outlet_id'];
 $user_id   = $_SESSION['user_id']; 
@@ -19,7 +17,7 @@ if(isset($_POST['btn-simpan'])){
     $kode_invoice = $_POST['kode_invoice'];
     $biaya_tambahan = $_POST['biaya_tambahan'];
     $diskon = $_POST['diskon'];
-    $pajak = $_POST['pajak'];
+    $pajak = '3000';
     
     $query = "INSERT INTO transaksi (outlet_id,kode_invoice,member_id,tgl,batas_waktu,biaya_tambahan,diskon,pajak,status,status_bayar,user_id) VALUES ('$outlet_id','$kode_invoice','$member_id','$tgl_sekarang','$batas_waktu','$biaya_tambahan','$diskon','$pajak','baru','belum','$user_id')";
 
@@ -114,7 +112,7 @@ require'layout_header.php';
                 </div>
                 <div class="form-group">
                     <label>Pajak</label>
-                    <input type="text" name="pajak" class="form-control" value="0"> 
+                    <input type="text"  type="text" name="pajak" class="form-control" readonly="" value="Rp.3000"> 
                 </div>
                 <div class="text-right">
                     <button type="reset" class="btn btn-danger">Reset</button>

@@ -60,7 +60,7 @@
             <div class="navbar-header">
                 <div class="top-left-part">
                     <!-- Logo -->
-                    <a class="logo" href="index.php">
+                    <a class="logo" href="transaksi.php">
                         <!-- Logo icon image, you can use font-icon also -->
                         <b style="color:#57bc90">
                             GL
